@@ -1,0 +1,222 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shutdowner"
+        xmlns:WpfApp1="clr-namespace:WpfApp1;assembly=CircleSwitch" x:Class="Shutdowner.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="350" 
+        Width="300"
+        Top="690" 
+        Left="1620"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Grid>
+        <Grid
+            Background="Black"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Column="1"
+                Source="logo.ico"
+                Height="25"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+            />
+            <Label
+                x:Name="Headline"
+                Content="Shutdowner" 
+                Grid.Column="2"
+                Grid.ColumnSpan="3"  
+                Foreground="Aqua"
+                FontSize="25"
+                VerticalContentAlignment="Center"
+            />
+            <Label
+                x:Name="Close"
+                Content="x"
+                Grid.Column="5"   
+                Foreground="White"
+                FontSize="25"
+                HorizontalContentAlignment="Right"
+                VerticalContentAlignment="Center" MouseLeftButtonUp="Close_MouseLeftButtonUp"
+                
+            />
+            <Grid
+                x:Name="SettingsPanel"
+                Panel.ZIndex="1"
+                Visibility="Visible"
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+            >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="InputDescription"
+                    Text="Minuten oder Uhrzeit eingeben"
+                    Grid.ColumnSpan="3"
+                    FontSize="14"
+                    Foreground="White"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                />
+                <TextBox
+                    x:Name="InputBox"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    FontSize="20"
+                    TextWrapping="Wrap"
+                    HorizontalContentAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    TextAlignment="Center"
+                    Height="40" 
+                    Background="Transparent"
+                    Foreground="White"
+                    CaretBrush="White" MouseEnter="InputBox_MouseEnter" 
+                                        
+                />
+                <TextBlock
+                    Text="sofort herunterfahren"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="3"
+                    FontSize="14"
+                    Foreground="White"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                />
+                <WpfApp1:CircleSwitch
+                    x:Name="InstantShutdown"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right" 
+                    Click="InstantShutdown_Click"                    
+                />
+                <TextBlock
+                    Text="Schnellstart deaktivieren"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    FontSize="14"
+                    Foreground="White"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                />
+                <WpfApp1:CircleSwitch
+                    x:Name="FullShutdown"
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right" Click="FullShutdown_Click"
+                />
+                <TextBlock
+                    Text="erweiterter Startmodus"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="3"
+                    FontSize="14"
+                    Foreground="White"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                />
+                <WpfApp1:CircleSwitch
+                    x:Name="AdvancedBoot"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right" Click="AdvancedBoot_Click"
+                />
+                <Button
+                    x:Name="AcceptOperation"
+                    Content="Herunterfahren"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="5" Click="AcceptOperation_Click"
+                />
+            </Grid>
+            <Grid
+                x:Name="ProgressPanel"
+                Panel.ZIndex="1"
+                Visibility="Collapsed"
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+            >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="ProgressPanelText"
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Grid.ColumnSpan="5"
+                    FontSize="20"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                />
+                <ProgressBar
+                    x:Name="pb"
+                    Height="10"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="5"
+                    Background="Transparent"
+                    Foreground="Aqua"
+                    BorderThickness="1"
+                    BorderBrush="Aqua" 
+                    Width="260"
+                />
+                <Button
+                    x:Name="CancelOperation"
+                    Content="Abbrechen"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="5" Click="CancelOperation_Click"                   
+                />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
