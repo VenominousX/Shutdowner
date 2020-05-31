@@ -53,7 +53,21 @@ namespace Shutdowner {
             FullShut = FullShutdown.IsChecked == true ? "" : " /hybrid ";
         }
         private void AdvancedBoot_Click(object sender, RoutedEventArgs e) {
-            AdvancedReboot = AdvancedBoot.IsChecked == true ? " /r " : " /s ";
+            if(AdvancedBoot.IsChecked == true) {
+                AdvancedReboot = " /r ";
+                FullShutdown.IsChecked = true;
+                InstantShutdown.IsChecked = true;
+                InputDescription.Visibility = Visibility.Collapsed;
+                InputBox.Visibility = Visibility.Collapsed;
+                InputBox.Text = "";
+            }
+            else {
+                AdvancedReboot = " /s ";
+                FullShutdown.IsChecked = false;
+                InstantShutdown.IsChecked = false;
+                InputDescription.Visibility = Visibility.Visible;
+                InputBox.Visibility = Visibility.Visible;
+            }
         }
 
         private void Close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) {
@@ -92,7 +106,7 @@ namespace Shutdowner {
             }
             else {
                 time *= 60;
-                ForceOperation(Command + time, time);
+                ForceOperation(Command + time + " /f", time);
             }
         }
 
