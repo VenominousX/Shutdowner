@@ -36,7 +36,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Source="logo.ico"
-                Height="25"
+                Height="40"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
             />
