@@ -40,13 +40,12 @@ namespace Shutdowner {
 
         private void InstantShutdown_Click(object sender, RoutedEventArgs e) {
             if(InstantShutdown.IsChecked == true) {
-                InputDescription.Visibility = Visibility.Collapsed;
-                InputBox.Visibility = Visibility.Collapsed;
-                InputBox.Text = "";
+                ElementsOff(InputBox, InputDescription);
             }
             else {
-                InputDescription.Visibility = Visibility.Visible;
-                InputBox.Visibility = Visibility.Visible;
+                ElementsOn(InputBox, InputDescription);
+                if(AdvancedBoot.IsChecked == true)
+                    AdvancedBoot.IsChecked = false;
             }
         }
         private void FullShutdown_Click(object sender, RoutedEventArgs e) {
@@ -57,16 +56,13 @@ namespace Shutdowner {
                 AdvancedReboot = " /r ";
                 FullShutdown.IsChecked = true;
                 InstantShutdown.IsChecked = true;
-                InputDescription.Visibility = Visibility.Collapsed;
-                InputBox.Visibility = Visibility.Collapsed;
-                InputBox.Text = "";
+                ElementsOff(InputBox, InputDescription);
             }
             else {
                 AdvancedReboot = " /s ";
                 FullShutdown.IsChecked = false;
                 InstantShutdown.IsChecked = false;
-                InputDescription.Visibility = Visibility.Visible;
-                InputBox.Visibility = Visibility.Visible;
+                ElementsOn(InputBox, InputDescription);
             }
         }
 
@@ -145,6 +141,17 @@ namespace Shutdowner {
         private void InputError(string s) {
             InputBox.FontSize = 14;
             InputBox.Text = s;
+        }
+
+        private void ElementsOff(TextBox tbox, TextBlock tblock) {
+            tbox.Text = "";
+            tbox.Visibility = Visibility.Collapsed;
+            tblock.Visibility = Visibility.Collapsed;
+        }
+
+        private void ElementsOn(TextBox tbox, TextBlock tblock) {
+            tbox.Visibility = Visibility.Visible;
+            tblock.Visibility = Visibility.Visible;
         }
     }
 }

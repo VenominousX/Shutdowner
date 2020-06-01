@@ -143,7 +143,7 @@
                     HorizontalAlignment="Right" Click="FullShutdown_Click"
                 />
                 <TextBlock
-                    Text="erweiterter Startmodus"
+                    Text="erweiterter Neustart"
                     Grid.Row="3"
                     Grid.ColumnSpan="3"
                     FontSize="14"

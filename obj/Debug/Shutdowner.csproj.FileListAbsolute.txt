@@ -24,7 +24,6 @@ D:\Workspace\C#\Shutdowner\bin\Debug\Shutdowner.pdb
 D:\Workspace\C#\Shutdowner\bin\Debug\CircleSwitch.dll
 D:\Workspace\C#\Shutdowner\bin\Debug\CircleSwitch.pdb
 D:\Workspace\C#\Shutdowner\bin\Debug\CircleSwitch.dll.config
-D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.csprojAssemblyReference.cache
 D:\Workspace\C#\Shutdowner\obj\Debug\MainWindow.g.cs
 D:\Workspace\C#\Shutdowner\obj\Debug\App.g.cs
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner_MarkupCompile.cache
