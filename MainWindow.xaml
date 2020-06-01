@@ -9,8 +9,6 @@
         Title="MainWindow"
         Height="350" 
         Width="300"
-        Top="690" 
-        Left="1620"
         ResizeMode="NoResize"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -20,8 +18,8 @@
             Background="Black"
         >
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="80"/>
                 <RowDefinition/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
@@ -35,6 +33,7 @@
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <Image
+                Grid.Row="1"
                 Grid.Column="1"
                 Source="logo.ico"
                 Height="25"
@@ -44,6 +43,7 @@
             <Label
                 x:Name="Headline"
                 Content="Shutdowner" 
+                Grid.Row="1"
                 Grid.Column="2"
                 Grid.ColumnSpan="3"  
                 Foreground="Aqua"
@@ -53,11 +53,13 @@
             <Label
                 x:Name="Close"
                 Content="x"
+                Grid.Row="1"
                 Grid.Column="5"   
                 Foreground="White"
                 FontSize="25"
                 HorizontalContentAlignment="Right"
-                VerticalContentAlignment="Center" MouseLeftButtonUp="Close_MouseLeftButtonUp"
+                VerticalContentAlignment="Center" 
+                MouseLeftButtonUp="Close_MouseLeftButtonUp"
                 
             />
             <Grid

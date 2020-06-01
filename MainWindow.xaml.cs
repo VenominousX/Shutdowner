@@ -32,6 +32,10 @@ namespace Shutdowner {
 
         public MainWindow() {
             InitializeComponent();
+
+            this.Left = System.Windows.SystemParameters.WorkArea.Width - this.Width;
+            this.Top = System.Windows.SystemParameters.WorkArea.Height - this.Height;
+
             Instant = $" /t ";
             FullShut = " /hybrid ";
             AdvancedReboot = " /s ";

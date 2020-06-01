@@ -37,3 +37,4 @@ D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.csproj.CoreCompileInputs.cache
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.csproj.CopyComplete
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.exe
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.pdb
+D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.csprojAssemblyReference.cache
