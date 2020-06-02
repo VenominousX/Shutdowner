@@ -57,15 +57,19 @@ namespace Shutdowner {
         }
         private void AdvancedBoot_Click(object sender, RoutedEventArgs e) {
             if(AdvancedBoot.IsChecked == true) {
-                AdvancedReboot = " /r ";
                 FullShutdown.IsChecked = true;
                 InstantShutdown.IsChecked = true;
+                AdvancedReboot = " /r /o";
+                FullShut = "";
+                Instant = "";
                 ElementsOff(InputBox, InputDescription);
             }
             else {
-                AdvancedReboot = " /s ";
                 FullShutdown.IsChecked = false;
                 InstantShutdown.IsChecked = false;
+                AdvancedReboot = " /s ";
+                Instant = " /t ";
+                FullShut = " /hybrid ";
                 ElementsOn(InputBox, InputDescription);
             }
         }
@@ -105,8 +109,13 @@ namespace Shutdowner {
                 }
             }
             else {
-                time *= 60;
-                ForceOperation(Command + time + " /f", time);
+                if(AdvancedBoot.IsChecked == false) {
+                    time *= 60;
+                    ForceOperation(Command + time + " /f", time);
+                }
+                else {
+                    ForceOperation(Command, time);
+                }
             }
         }
 
