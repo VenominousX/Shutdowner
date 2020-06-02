@@ -38,4 +38,4 @@ D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.csproj.CopyComplete
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.exe
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.pdb
 D:\Workspace\C#\Shutdowner\obj\Debug\Shutdowner.csprojAssemblyReference.cache
-D:\Workspace\C#\Shutdowner\obj\Debug\Dictionary1.baml
+D:\Workspace\C#\Shutdowner\obj\Debug\LogoDict.baml
