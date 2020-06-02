@@ -61,7 +61,6 @@ namespace Shutdowner {
                 InstantShutdown.IsChecked = true;
                 AdvancedReboot = " /r /o";
                 FullShut = "";
-                Instant = "";
                 ElementsOff(InputBox, InputDescription);
             }
             else {
@@ -114,7 +113,7 @@ namespace Shutdowner {
                     ForceOperation(Command + time + " /f", time);
                 }
                 else {
-                    ForceOperation(Command, time);
+                    ForceOperation(Command + "0 /f", time);
                 }
             }
         }
