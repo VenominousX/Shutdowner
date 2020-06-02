@@ -32,14 +32,16 @@
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
-            <Image
+            <ContentControl
                 Grid.Row="1"
                 Grid.Column="1"
-                Source="logo.ico"
+                Width="35"
                 Height="35"
+                ContentTemplate="{StaticResource logo}"
                 VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-            />
+                HorizontalAlignment="Left"                
+            >
+            </ContentControl>
             <Label
                 x:Name="Headline"
                 Content="Shutdowner" 
