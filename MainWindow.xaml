@@ -40,8 +40,7 @@
                 ContentTemplate="{StaticResource logo}"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"                
-            >
-            </ContentControl>
+            />
             <Label
                 x:Name="Headline"
                 Content="Shutdowner" 
